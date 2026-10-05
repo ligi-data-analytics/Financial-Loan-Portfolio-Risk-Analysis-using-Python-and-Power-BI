@@ -1,1 +1,6 @@
 Cleaned and preprocessed financial loan dataset
+df["emp_title"] = df["emp_title"].fillna("Unknown")
+
+df["default_flag"] = df["loan_status"].apply(
+    lambda x: 1 if x == "Charged Off" else 0
+)
