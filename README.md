@@ -8,7 +8,7 @@ The project is designed around **Financial/Loan Operations** and demonstrates ho
 
 The analysis focuses on understanding loan characteristics, borrower profiles, and factors associated with loan defaults.
 
----
+---    
 
 ## 🎯 Business Objective
 
