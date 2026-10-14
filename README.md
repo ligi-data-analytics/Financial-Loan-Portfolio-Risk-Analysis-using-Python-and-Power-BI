@@ -1,205 +1,106 @@
-# Loan Default Analysis – Financial & Loan Operations
+# Financial Loan Default Analysis Using Python and Power BI
 
-## 📌 Project Overview
+## Project Overview
+This project analyzes financial loan data to identify loan default patterns, understand borrower behavior, and generate business insights using Python and Power BI.
 
-This project analyzes loan application and repayment data to identify patterns associated with loan defaults.
+The project follows a data analytics workflow, from data cleaning and exploratory analysis to interactive dashboard development.
 
-The project is designed around **Financial/Loan Operations** and demonstrates how Python and Power BI can be used to analyze loan performance, borrower characteristics, and default risk.
+## Project Objectives
+- Clean and preprocess financial loan data using Python.
+- Analyze loan performance and default trends.
+- Identify relationships between loan grades, interest rates, loan purposes, and defaults.
+- Create DAX measures for key performance indicators (KPIs).
+- Develop an interactive Power BI dashboard to support data-driven decision-making.
 
-The analysis focuses on understanding loan characteristics, borrower profiles, and factors associated with loan defaults.
+## Dataset Information
+- **Dataset:** Financial Loan Dataset
+- **Initial Records:** 38,576 rows
+- **Original Columns:** 24
+- **Final Columns:** 25, including the derived `default_flag` column
+- **Target Indicator:** `default_flag`
+  - `0` = Non-defaulted loan
+  - `1` = Defaulted loan
 
----    
+## Tools and Technologies
+- **Python:** Data cleaning, preprocessing, and exploratory data analysis
+- **Pandas and NumPy:** Data manipulation and analysis
+- **Matplotlib:** Data visualization
+- **Power BI:** Interactive dashboard development
+- **DAX:** KPI calculations and business analysis
+- **Excel:** Source dataset and data review
+- **GitHub:** Project version control and documentation
 
-## 🎯 Business Objective
+## Project Workflow
 
-The main objectives of this project are:
+### 1. Data Cleaning and Preprocessing
+- Loaded the financial loan dataset into Python.
+- Inspected the dataset structure and data types.
+- Checked for missing values and duplicate records.
+- Handled missing values in the `emp_title` column.
+- Created the `default_flag` column using loan status.
+- Saved the cleaned dataset for Power BI analysis.
 
-* Analyze overall loan performance
-* Identify the proportion of defaulted loans
-* Understand borrower and loan characteristics
-* Analyze default rates across different loan grades
-* Identify patterns in interest rates, loan amounts, income, and DTI
-* Prepare insights that can support financial and loan operations
-* Build an interactive Power BI dashboard for business reporting
+### 2. Exploratory Data Analysis (EDA)
+Analyzed loan characteristics and default patterns, including:
+- Loan status distribution.
+- Default rates across loan grades.
+- Loan amounts for defaulted and non-defaulted loans.
+- Interest rate patterns.
+- Loan purpose distribution.
+- Borrower income and loan characteristics.
 
----
+### 3. Power BI Analysis
+Imported the cleaned dataset into Power BI and created DAX measures for key business calculations.
 
-## 📊 Dataset
+The dashboard includes:
+- KPI cards for key loan metrics.
+- Total Loans by Loan Status.
+- Default Rate by Grade.
+- Total Loans by Purpose.
+- Average Interest Rate by Grade.
+- Interactive slicers for filtering the analysis.
 
-The dataset contains **38,576 loan records** and **30 columns** after data preparation.
+### 4. Dashboard and Business Insights
+The Power BI dashboard helps users explore loan performance, compare default rates, and identify categories that may require closer monitoring.
 
-Important fields include:
+## Key Findings
 
-* `loan_amount`
-* `annual_income`
-* `int_rate`
-* `dti`
-* `installment`
-* `total_payment`
-* `grade`
-* `sub_grade`
-* `emp_length`
-* `home_ownership`
-* `verification_status`
-* `purpose`
-* `address_state`
-* `loan_status`
-* `term`
-* `issue_date`
+- **Total loan records:** 38,576.
+- **Defaulted loans:** 5,333.
+- **Non-defaulted loans:** 33,243.
+- **Overall default rate:** Approximately 13.82%.
+- **Average interest rate:** Approximately 12.05%.
+- **Default rate by grade:** The observed default rate increased from approximately 5.70% for Grade A to 31.31% for Grade G.
 
-Additional analytical columns were prepared during data cleaning:
+These findings highlight differences in default risk across loan grades and demonstrate how data analytics can support loan portfolio monitoring.
 
-* `emp_length_years`
-* `term_months`
-* `issue_year`
-* `issue_month`
-* `issue_month_name`
-* `default_flag`
+## Business Recommendations
+- Monitor higher-risk loan grades more closely.
+- Review borrower and loan characteristics associated with higher default rates.
+- Use interactive dashboards to track loan performance and default trends.
+- Apply data-driven insights to support risk assessment and lending decisions.
 
----
+## Project Deliverables
+- Python data cleaning and EDA work.
+- Cleaned financial loan dataset.
+- Power BI dashboard (`.pbix`).
+- Final project report documenting methodology, calculations, findings, and visualizations.
 
-## 🧹 Data Preparation
+## Conclusion
+This project demonstrates the application of Python and Power BI to a financial loan dataset. It combines data preprocessing, exploratory analysis, DAX calculations, and interactive visualization to communicate meaningful business insights.
 
-The following data preparation activities were completed:
+The project strengthened my practical skills in data analytics, data visualization, and business reporting.
 
-* Checked dataset structure
-* Checked duplicate records
-* Checked missing values
-* Verified data types
-* Converted date columns to datetime format
-* Created employment-length numeric values
-* Created loan-term numeric values
-* Extracted year and month from issue dates
-* Created a binary `default_flag` for default analysis
-
-### Default Classification
-
-| Loan Status | Default Flag |
-| ----------- | -----------: |
-| Fully Paid  |            0 |
-| Current     |            0 |
-| Charged Off |            1 |
-
-The dataset contains:
-
-* **33,243 non-defaulted loans**
-* **5,333 defaulted loans**
-* **13.82% overall default rate**
-
----
-
-## 🔎 Initial EDA Findings
-
-### Default Rate by Loan Grade
-
-| Grade | Default Rate |
-| ----- | -----------: |
-| A     |        5.70% |
-| B     |       11.50% |
-| C     |       16.02% |
-| D     |       20.69% |
-| E     |       24.80% |
-| F     |       30.25% |
-| G     |       31.31% |
-
-The initial analysis shows differences in default rates across loan grades.
-
-### Defaulted vs Non-Defaulted Loans
-
-Initial group-level analysis shows differences in:
-
-* Average loan amount
-* Annual income
-* Interest rate
-* DTI
-* Installment amount
-* Total payment
-
-Further analysis will examine these relationships across additional borrower and loan characteristics.
-
----
-
-## 🛠️ Tools & Technologies
-
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Jupyter Notebook / Google Colab
-* Power BI
-* Git & GitHub
-
----
-
-## 📈 Planned Power BI Dashboard
-
-The next stage of the project will include an interactive Power BI dashboard covering:
-
-* Total Loans
-* Total Loan Amount
-* Defaulted Loans
-* Default Rate
-* Loan Status Distribution
-* Default Rate by Grade
-* Default Rate by Purpose
-* Default Rate by State
-* Default Rate by Employment Length
-* Default Rate by Home Ownership
-* Default Rate by Verification Status
-* Loan Trends by Year and Month
-
----
-
-## 📂 Project Structure
-
-```text
-Loan-Default-Analysis/
-│
-├── data/
-│   └── loan_dataset.csv
-│
-├── notebooks/
-│   └── loan_default_analysis.ipynb
-│
-├── powerbi/
-│   └── loan_default_dashboard.pbix
-│
-├── README.md
-└── requirements.txt
-```
-
----
-
-## 🚀 Project Status
-
-### Completed
-
-* [x] Dataset loading
-* [x] Data inspection
-* [x] Duplicate check
-* [x] Missing-value check
-* [x] Data-type verification
-* [x] Feature preparation
-* [x] Default flag creation
-* [x] Initial EDA
-* [x] Grade-wise default analysis
-
-### In Progress
-
-* [ ] Employment profile analysis
-* [ ] Home ownership analysis
-* [ ] Verification-status analysis
-* [ ] Loan-term analysis
-* [ ] Purpose-wise analysis
-* [ ] State-wise analysis
-* [ ] Power BI dashboard
-* [ ] Final business insights
-
----
-
-## 👩‍💻 Author
-
+## Author
 **Ligi Mathew**
 
-Data Analytics Portfolio Project
-Focus: Financial & Loan Operations Analytics
+Aspiring Data Analyst | Python | SQL | Excel | Power BI
+
+
+
+
+
+
+
+
+
