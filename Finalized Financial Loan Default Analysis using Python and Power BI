@@ -1,0 +1,11 @@
+Completed Financial Loan Default Analysis project using Python and Power BI.
+
+- Cleaned and preprocessed the financial loan dataset using Python.
+- Handled missing values and checked for duplicate records.
+- Created a default_flag column to identify loan defaults.
+- Performed exploratory data analysis (EDA) to identify loan default patterns.
+- Imported the cleaned dataset into Power BI.
+- Created five DAX measures for key business calculations.
+- Designed an interactive Power BI dashboard with KPI cards, charts, and slicers.
+- Analyzed default rates by loan grade, loan purpose, and loan status.
+- Finalized the project report with methodology, calculations, visualizations, and business insights.
